@@ -1,0 +1,16 @@
+
+inner join dua tabel//
+SELECT pegawai.nama, referensi.nilai AS agama, referensi1.nilai AS golongan_darah
+FROM (pegawai INNER JOIN referensi ON pegawai.agama = referensi.kode) INNER JOIN referensi1 ON pegawai.gol_darah = referensi1.kode;
+
+inner join satu tabel dengan dua kategori//
+SELECT pegawai.nama, referensi.nilai AS Agama, referensi_1.nilai AS Golongan_Darah
+FROM (pegawai INNER JOIN referensi ON pegawai.agama = referensi.kode) INNER JOIN referensi AS referensi_1 ON pegawai.gol_darah = referensi_1.kode
+WHERE (((referensi.kelompok)="Agama") AND ((referensi_1.kelompok)="gol_darah"));
+
+inner join satu tabel dengan tiga kategori//
+SELECT pegawai.nama, referensi.nilai AS Agama, referensi_1.nilai AS Gol_Darah, referensi_2.nilai AS Jenis_Kelamin
+FROM ((pegawai INNER JOIN referensi ON pegawai.agama = referensi.kode) INNER JOIN referensi AS referensi_1 ON pegawai.gol_darah = referensi_1.kode) INNER JOIN referensi AS referensi_2 ON pegawai.jenis_kelamin = referensi_2.kode
+WHERE (((referensi.kelompok)="Agama") AND ((referensi_1.kelompok)="gol_darah") AND ((referensi_2.kelompok)="kelamin"));
+
+
